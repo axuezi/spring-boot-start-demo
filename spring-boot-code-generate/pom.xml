@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>spring-boot-code-generate</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -57,5 +58,61 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 显式指定编译插件的版本和编译的JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!-- 配置spring-boot的maven打包插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- 配置私服下载jar包地址 -->
+    <repositories>
+        <repository>
+            <id>maven-repository</id>
+            <url>http://nexus.springbook.cn/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- 配置私服下载插件jar包地址 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-plugin-repository</id>
+            <url>http://nexus.springbook.cn/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!-- 配置私服上传jar包地址 -->
+    <distributionManagement>
+        <!-- release包上传地址 -->
+        <repository>
+            <id>maven-releases</id>
+            <url>http://nexus.springbook.cn/repository/maven-releases/</url>
+        </repository>
+        <!-- snapshot包上传地址 -->
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://nexus.springbook.cn/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

@@ -18,16 +18,43 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.axue</groupId>
-            <artifactId>spring-boot-code-generate</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.axue</groupId>-->
+<!--            <artifactId>spring-boot-code-generate</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.5.6</version>
         </dependency>
+        <dependency>
+            <groupId>com.axue.framework</groupId>
+            <artifactId>axue-framework-boot-plugin-sms</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
+    <!-- 配置私服下载jar包地址 -->
+    <repositories>
+        <repository>
+            <id>maven-repository</id>
+            <url>http://nexus.springbook.cn/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- 配置私服下载插件jar包地址 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-plugin-repository</id>
+            <url>http://nexus.springbook.cn/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>

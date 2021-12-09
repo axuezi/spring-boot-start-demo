@@ -37,8 +37,7 @@ public class GenerateCode {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://" + url + "?useUnicode=true&characterEncoding=" +
-                "UTF-8&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true");
+        dsc.setUrl("jdbc:mysql://" + url + "?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername(username);
         dsc.setPassword(password);
